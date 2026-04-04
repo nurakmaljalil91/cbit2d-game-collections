@@ -1,0 +1,9 @@
+[submodule "Cbit2d"]
+	path = Cbit2d
+	url = https://github.com/nurakmaljalil91/Cbit2d.git
+[submodule "SharkCardGame"]
+	path = SharkCardGame
+	url = https://github.com/nurakmaljalil91/SharkCardGame.git
+[submodule "GameOfLife"]
+	path = GameOfLife
+	url = https://github.com/nurakmaljalil91/GameOfLife.git
