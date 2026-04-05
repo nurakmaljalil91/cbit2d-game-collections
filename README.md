@@ -77,3 +77,51 @@ Typical workflow:
 For now, the top-level documentation and repo structure are the main source of truth here.
 
 Until `SharkCardGame/` and `GameOfLife/` are updated for the latest Cbit2D version, avoid assuming their current integration reflects the desired long-term project layout.
+
+## Repo-Local Skills
+
+This repository includes repo-local Codex skills under `.codex/skills/`:
+
+- `engine-cpp20`: reusable engine and library work in `Cbit2d/`
+- `gameplay-cpp20`: gameplay, ECS, and game-rule work in game repositories
+
+These skills are stored in the repo so the prompting conventions and boundaries stay versioned with the workspace.
+
+## Prompting These Skills
+
+Use an explicit path when prompting repo-local skills:
+
+```text
+Use $engine-cpp20 at .codex/skills/engine-cpp20 to refactor the Cbit2d renderer API for cleaner SDL3 boundaries.
+```
+
+```text
+Use $gameplay-cpp20 at .codex/skills/gameplay-cpp20 to implement turn resolution with focused EnTT systems.
+```
+
+You can also use absolute paths if needed:
+
+```text
+Use $engine-cpp20 at C:\Users\User\Developments\cbit2d-game-collections\.codex\skills\engine-cpp20 to review the asset manager design.
+```
+
+## Prompting Separate Engine And Gameplay Agents
+
+When splitting work across subagents, keep ownership explicit:
+
+- Engine agent: owns `Cbit2d/`, engine APIs, rendering, resources, and platform/runtime code
+- Gameplay agent: owns game-side ECS, scenes, rules, and feature logic
+
+Recommended engine prompt:
+
+```text
+Use $engine-cpp20 at .codex/skills/engine-cpp20. Work only in Cbit2d unless explicitly told otherwise. Optimize for reusable engine/library architecture, stable APIs, explicit ownership, clean SDL3 boundaries, and maintainable modern C++20. Do not introduce game-specific rules or content into engine modules.
+```
+
+Recommended gameplay prompt:
+
+```text
+Use $gameplay-cpp20 at .codex/skills/gameplay-cpp20. Work in the game repository unless explicitly told otherwise. Optimize for gameplay behavior, clear ECS structure, explicit update order, and maintainable modern C++20. Consume engine APIs cleanly. Do not redesign engine internals unless an interface gap blocks the task.
+```
+
+If a task crosses both layers, define or adjust the engine-facing interface first, then let gameplay integrate against it.

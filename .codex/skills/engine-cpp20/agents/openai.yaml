@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engine C++20"
+  short_description: "Reusable Cbit2d engine and library specialist"
+  default_prompt: "Use $engine-cpp20 at .codex/skills/engine-cpp20 for reusable C++20 engine and library work in Cbit2d."

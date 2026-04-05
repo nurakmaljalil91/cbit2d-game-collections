@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gameplay C++20"
+  short_description: "Gameplay and ECS specialist for game-specific logic"
+  default_prompt: "Use $gameplay-cpp20 at .codex/skills/gameplay-cpp20 for C++20 gameplay, ECS, and game-rule work."
