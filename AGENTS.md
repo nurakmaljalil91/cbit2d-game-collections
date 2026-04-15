@@ -39,6 +39,14 @@ git clone --recurse-submodules <repo-url>
 git submodule update --init --recursive
 ```
 
+## Pop!_OS Linux Build Guidance
+
+- Parent-level Linux setup instructions for building and running `SharkCardGame` live in `docs/Building And Running in Pop OS linux.md`.
+- The helper script for configuring, building, and running the game is `scripts/build-and-run-shark-card-game.sh`.
+- Keep Linux build instructions aligned with the submodule workflow: configure `SharkCardGame/` from the parent workspace and let it consume `../Cbit2d` through CMake.
+- Do not assume the checked-in `SharkCardGame` CMake preset works on Linux; it currently points to a Windows CLion vcpkg toolchain path.
+- If documenting or debugging Linux builds, call out that `Cbit2d` currently requires CMake `4.2` or newer.
+
 ## Working Expectations For Codex
 
 - Prefer repo-level documentation, setup, and coordination changes unless asked to modify engine or game code.

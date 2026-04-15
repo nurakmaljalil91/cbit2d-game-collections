@@ -35,6 +35,35 @@ If you already cloned the repo without submodules, initialize them with:
 git submodule update --init --recursive
 ```
 
+## Build And Run SharkCardGame On Pop!_OS Linux
+
+For Pop!_OS Linux setup, dependency installation, CMake configuration, build, and run commands, see:
+
+```text
+docs/Building And Running in Pop OS linux.md
+```
+
+Important Linux notes:
+
+- The checked-in `SharkCardGame` CMake preset currently points to a Windows CLion vcpkg path.
+- Configure manually with a Linux vcpkg toolchain file.
+- `Cbit2d` currently requires CMake `4.2` or newer.
+
+After the required Pop!_OS packages, CMake, and vcpkg are installed, the helper script can configure, build, and run the game:
+
+```bash
+scripts/build-and-run-shark-card-game.sh
+```
+
+Useful options:
+
+```bash
+scripts/build-and-run-shark-card-game.sh --clean
+scripts/build-and-run-shark-card-game.sh --no-run
+scripts/build-and-run-shark-card-game.sh --sdl-driver x11
+scripts/build-and-run-shark-card-game.sh --sdl-driver wayland
+```
+
 ## Update Submodules
 
 To fetch the latest commits referenced by this repository:
