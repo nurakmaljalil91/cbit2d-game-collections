@@ -7,3 +7,6 @@
 [submodule "GameOfLife"]
 	path = GameOfLife
 	url = https://github.com/nurakmaljalil91/GameOfLife.git
+[submodule "FantasyAdventure"]
+	path = FantasyAdventure
+	url = https://github.com/nurakmaljalil91/FantasyAdventure.git
