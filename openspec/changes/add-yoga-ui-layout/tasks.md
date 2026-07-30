@@ -22,6 +22,6 @@
 ## 4. Sandbox migration and validation
 
 - [x] 4.1 Migrate the sandbox menu title and Play button to a root-centered retained UI tree.
-- [ ] 4.2 Add automated layout tests for centered, row/column, flexible sizing, invalidation, and clipping/hit-test behavior.
+- [x] 4.2 Add automated layout tests for centered, row/column, flexible sizing, invalidation, and clipping/hit-test behavior.
 - [ ] 4.3 Manually validate the sandbox menu at small, default, ultrawide, resized, fullscreen, and high-DPI viewport configurations.
 - [x] 4.4 Add concise engine documentation showing the preferred responsive UI API and noting the legacy ECS UI migration path.
